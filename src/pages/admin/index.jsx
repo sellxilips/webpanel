@@ -274,7 +274,7 @@ const AdminPage = () => {
                           if(user.pgJson){
                             var json = JSON.stringify(user.pgJson).toLowerCase();
                             if(json){
-                              return json.match(new RegExp("blue_verified", "g")).length;
+                              return json.match(new RegExp("blue_verified", "g")) ? json.match(new RegExp("blue_verified", "g")).length : 0;
                             }else{
                               return 0;
                             }
