@@ -143,13 +143,13 @@ const AdminPage = () => {
 
   const handleDelete = async (userID) => {
     try {
-      alert('chức năng tạm đóng');
-      // Tạo một reference đến tài khoản bạn muốn xóa
-      // const userRef = doc(db, "usersdata", userID); // Đây giả định rằng ID của người dùng được sử dụng làm ID của tài khoản
-      // // Gọi hàm xóa dựa trên reference
-      // await deleteDoc(userRef);
-      // setReload((prevState) => !prevState);
-      // console.log(`Xóa người dùng có ID: ${userID} thành công.`);
+     // alert('chức năng tạm đóng');
+      //Tạo một reference đến tài khoản bạn muốn xóa
+      const userRef = doc(db, "usersdata", userID); // Đây giả định rằng ID của người dùng được sử dụng làm ID của tài khoản
+      // Gọi hàm xóa dựa trên reference
+      await deleteDoc(userRef);
+      setReload((prevState) => !prevState);
+      console.log(`Xóa người dùng có ID: ${userID} thành công.`);
     } catch (error) {
       console.error(`Lỗi xóa người dùng có ID: ${userID}:`, error);
     }
